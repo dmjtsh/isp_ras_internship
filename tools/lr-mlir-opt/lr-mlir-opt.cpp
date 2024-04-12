@@ -4,7 +4,7 @@
 #include "../../../mlir/Support/FileUtilities.h"
 #include "../../../mlir/Tools/mlir-opt/MlirOptMain.h"
 
-//#include "../../include/LifeRange/Passes.h"
+#include "../../include/LifeRange/Passes.h"
 
 int main(int argc, char **argv) 
 {
