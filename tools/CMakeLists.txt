@@ -1,1 +1,1 @@
-add_subdirectory(LATool)
+add_subdirectory(lr-mlir-opt)
