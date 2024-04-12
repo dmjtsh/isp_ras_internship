@@ -2,6 +2,10 @@
 
 #ifdef GEN_PASS_DECL
 // Generate declarations for all passes.
+
+std::unique_ptr<OperationPass<func::FuncOp>>
+createLifeRangePass(); // ADDED STRING
+
 #define GEN_PASS_DECL_LIFERANGE
 #undef GEN_PASS_DECL
 #endif // GEN_PASS_DECL
