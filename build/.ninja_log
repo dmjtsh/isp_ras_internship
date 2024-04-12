@@ -1,0 +1,6 @@
+# ninja log v5
+0	211	1712960325081268878	build.ninja	c637f742aa27cb36
+8	25874	1712958521788768866	tools/lr-mlir-opt/CMakeFiles/lr-mlir-opt.dir/lr-mlir-opt.cpp.o	8657e1566fb4f416
+10	2328	1712958647910552361	bin/lr-mlir-opt	855f3c9c2db8e273
+9	25087	1712960936409892528	tools/lr-mlir-opt/CMakeFiles/lr-mlir-opt.dir/lr-mlir-opt.cpp.o	8657e1566fb4f416
+25087	27088	1712960938409846099	bin/lr-mlir-opt	855f3c9c2db8e273
