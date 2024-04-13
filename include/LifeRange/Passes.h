@@ -14,7 +14,7 @@ namespace liferange {
 
 #define GEN_PASS_DECL
 
-#include "Passes.h.inc"
+#include "LifeRange/Passes.h.inc"
 
 std::unique_ptr<OperationPass<func::FuncOp>> 
 	createLifeRangePass();
@@ -26,7 +26,7 @@ std::unique_ptr<OperationPass<func::FuncOp>>
 /// Generate the code for registering passes.
 #define GEN_PASS_REGISTRATION
 
-#include "Passes.h.inc"
+#include "LifeRange/Passes.h.inc"
 
 } // namespace liferange
 } // namespace mlir

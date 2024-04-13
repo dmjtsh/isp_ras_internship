@@ -1,7 +1,7 @@
 #ifndef LIFERANGE_PASS
 #define LIFERANGE_PASS
 
-include "../../../mlir/Pass/PassBase.td"
+include "mlir/Pass/PassBase.td"
 
 def LifeRange : Pass<"life-range", "func::FuncOp"> 
 {
