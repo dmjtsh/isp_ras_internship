@@ -16,8 +16,8 @@ namespace liferange {
 
 #include "Passes.h.inc"
 
-std::unique_ptr<OperationPass<func::FuncOp>>
-createLifeRangePass();
+std::unique_ptr<OperationPass<func::FuncOp>> 
+	createLifeRangePass();
 
 //===----------------------------------------------------------------------===//
 // Registration

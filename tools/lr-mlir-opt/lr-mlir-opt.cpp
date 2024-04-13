@@ -8,7 +8,7 @@
 
 int main(int argc, char **argv) 
 {
-    //mlir::liferange::registerPasses();
+    mlir::liferange::registerPasses();
 
     mlir::DialectRegistry registry;
     mlir::registerAllDialects(registry);

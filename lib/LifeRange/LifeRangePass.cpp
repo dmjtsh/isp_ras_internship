@@ -23,6 +23,12 @@ struct LifeRangePass
 		printf("Hello Pass World");
 	});
   }
+
 };
 
 } // namespace
+
+std::unique_ptr<OperationPass<func::FuncOp>>
+mlir::liferange::createLifeRangePass() {
+  return std::make_unique<LifeRangePass>();
+}

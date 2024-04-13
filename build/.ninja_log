@@ -1,12 +1,11 @@
 # ninja log v5
-0	211	1712992819040763207	build.ninja	c637f742aa27cb36
-10	28240	1712991540976582692	tools/lr-mlir-opt/CMakeFiles/lr-mlir-opt.dir/lr-mlir-opt.cpp.o	4229fd0fdf9aff84
-28241	30237	1712991542972596509	bin/lr-mlir-opt	7185f554b37b4c98
-9	24	1712992392332543292	include/LifeRange/Passes.h.inc	5452d1823eda7aeb
-9	24	1712992392332543292	/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/include/LifeRange/Passes.h.inc	5452d1823eda7aeb
-10	42	1712992821600643388	include/LifeRange/Passes.h.inc	5452d1823eda7aeb
-10	42	1712992821600643388	/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/include/LifeRange/Passes.h.inc	5452d1823eda7aeb
-43	2204	1712992823764542552	lib/LifeRange/CMakeFiles/obj.MLIRLifeRange.dir/LifeRangePass.cpp.o	355b46d31f2f4f07
-2204	2274	1712992823824539760	lib/libMLIRLifeRange.a	41b8b7284b385ddd
-10	25005	1712992846555505571	tools/lr-mlir-opt/CMakeFiles/lr-mlir-opt.dir/lr-mlir-opt.cpp.o	4229fd0fdf9aff84
+0	211	1712995052369530817	build.ninja	c637f742aa27cb36
+4	25176	1712994909390818419	tools/lr-mlir-opt/CMakeFiles/lr-mlir-opt.dir/lr-mlir-opt.cpp.o	4229fd0fdf9aff84
 25005	26949	1712992848499419203	bin/lr-mlir-opt	7185f554b37b4c98
+4	22	1712994884247068627	include/LifeRange/Passes.h.inc	5452d1823eda7aeb
+4	22	1712994884247068627	/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/include/LifeRange/Passes.h.inc	5452d1823eda7aeb
+22	2373	1712994886595044928	lib/LifeRange/CMakeFiles/obj.MLIRLifeRange.dir/LifeRangePass.cpp.o	355b46d31f2f4f07
+2373	2459	1712994886679044081	lib/libMLIRLifeRange.a	41b8b7284b385ddd
+9	42	1712995053937517837	include/LifeRange/Passes.h.inc	5452d1823eda7aeb
+9	42	1712995053937517837	/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/include/LifeRange/Passes.h.inc	5452d1823eda7aeb
+42	2012	1712995055901501611	bin/lr-mlir-opt	463cb8112c7a8854
