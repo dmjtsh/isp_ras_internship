@@ -1,11 +1,12 @@
 #include <stdio.h>
-#include "../../include/LifeRange/Passes.h"
-#include "../../../mlir/Dialect/Func/IR/FuncOps.h"
+
+#include "LifeRange/Passes.h"
+#include "mlir/Dialect/Func/IR/FuncOps.h"
 
 namespace mlir {
-namespace affine {
+namespace liferange {
 #define GEN_PASS_DEF_LIFERANGE
-	#include "../../include/LifeRange/Passes.h.inc"
+	#include "LifeRange/Passes.h.inc"
 } 
 } 
 
@@ -15,7 +16,7 @@ using namespace mlir::liferange;
 namespace {
 
 struct LifeRangePass
-    : public affine::impl::LifeRangeBase<LifeRangePass> {
+    : public liferange::impl::LifeRangeBase<LifeRangePass> {
 
   void runOnOperation() override {
     getOperation().walk([&](Operation *op) {
