@@ -37,10 +37,9 @@ using namespace mlir::liferange;
    return min_ind;
  }
 
-//Prints Operand's Life Interval in brackets
-void PrintOpLifeRange(Liveness* liveness) {
-  llvm::raw_ostream& os = llvm::outs();
-
+// Prints  Values Life Intervals in brackets
+// Returns Values Life Ranges
+  std::vector<std::pair<size_t, size_t>> PrintValuesLifeRanges(Liveness* liveness) {
   DenseMap<Block *, size_t>     block_ids;
   DenseMap<Operation *, size_t> operation_ids;
   DenseMap<Value, size_t>       value_ids;
@@ -63,10 +62,12 @@ void PrintOpLifeRange(Liveness* liveness) {
   // Lambda Function for Printing Memref's Name
   auto printValue = [&](Value value) {
     if (value.getDefiningOp())
-      os << "memref_" << value_ids[value];
+      llvm::outs() << "memref_" << value_ids[value];
   };
 
-  std::vector<std::pair<size_t, size_t>> values_intervals;
+  std::vector<std::pair<size_t, size_t>> values_intervals(value_ids.size());
+  std::pair<size_t, size_t> result_interval;
+
   liveness->getOperation()->walk<WalkOrder::PreOrder>([&](Block *block) {
     // Print liveness intervals.
     for (Operation &op : *block) {
@@ -77,20 +78,49 @@ void PrintOpLifeRange(Liveness* liveness) {
         if(isa<TypedValue<MemRefType>>(result))
         {
           printValue(result);
-          os << ":";
-          
-          std::pair<size_t, size_t> value_interval;
+          llvm::outs() << ":";
+        
           auto live_operations = liveness->resolveLiveness(result);
-          value_interval.first  = SearchMinLiveInd(live_operations, operation_ids);
-          value_interval.second = SearchMaxLiveInd(live_operations, operation_ids);
-    
-          os << "[" << value_interval.first << "; " << value_interval.second << "]\n";
+          result_interval.first  = SearchMinLiveInd(live_operations, operation_ids);
+          result_interval.second = SearchMaxLiveInd(live_operations, operation_ids);
+
+          llvm::outs() << "[" << result_interval.first << "; " << result_interval.second << "]\n";
+
+          // Setting Interval of Value with Its Index
+          size_t result_index = value_ids[result];
+          values_intervals[result_index] = result_interval;
         }
       }
     }
-    os << "\n";
+    llvm::outs() << "\n";
   });
 
+  return values_intervals;
+}
+
+// Prints Independent Life Ranges of Values
+void PrintIndependentLifeRanges(std::vector<std::pair<size_t, size_t>> life_ranges)
+{
+  bool memory_can_be_united = false;
+  for(size_t i = 0; i < life_ranges.size(); i++)
+  {
+    for(size_t j = i+1; j < life_ranges.size(); j++)
+    {
+      // No Intersection between to intervals
+      if(life_ranges[i].second < life_ranges[j].first 
+      || life_ranges[j].second < life_ranges[i].first)
+      {
+        memory_can_be_united = true;
+        llvm::outs() << "We can unite \"memref_" << i << "\" and " 
+                     << "\"memref_" << j << "\" memory!\n";
+      }   
+    }
+  }
+
+  if(!memory_can_be_united)
+    llvm::outs() << "No memory to unite :-(\n";    
+
+  llvm::outs() << "\n";
 }
 
 namespace {
@@ -101,10 +131,11 @@ struct LifeRangePass
   void runOnOperation() override {
     Liveness &lv = getAnalysis<Liveness>();
     
-    llvm::raw_ostream& os = llvm::outs();
-
-    lv.print(os);
-    PrintOpLifeRange(&lv);
+    //llvm::raw_ostream& os = llvm::outs();
+    //lv.print(os);
+    
+    std::vector<std::pair<size_t, size_t>> life_ranges = PrintValuesLifeRanges(&lv);
+    PrintIndependentLifeRanges(life_ranges);
   }
   
 };
