@@ -1,0 +1,279 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						6,
+						8,
+						9,
+						10,
+						11,
+						13
+					]
+				},
+				{
+					"build" : "include",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-include-7ead17b99bffc88b66bb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "include"
+				},
+				{
+					"build" : "include/LifeRange",
+					"jsonFile" : "directory-include.LifeRange-ab0d97184159e1a65789.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "include/LifeRange",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "tools",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-tools-f9645b0170a45a75eff2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tools"
+				},
+				{
+					"build" : "tools/lr-mlir-opt",
+					"jsonFile" : "directory-tools.lr-mlir-opt-d3ac630b2b8b1db5a352.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "tools/lr-mlir-opt",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "lib",
+					"childIndexes" : 
+					[
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib-c12f15c6f888b43a891c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "lib"
+				},
+				{
+					"build" : "lib/LifeRange",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib.LifeRange-b4006782d8c33465fad2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 0,
+					"source" : "lib/LifeRange",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5,
+						12
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"name" : "life-range-analysis",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 6,
+					"id" : "MLIRLifeRange::@9775b9ed26a913d18a58",
+					"jsonFile" : "target-MLIRLifeRange-8c5a26f5bf24ed6059ee.json",
+					"name" : "MLIRLifeRange",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "MLIRLiveRangePassesIncGen::@7456a9ffdd420dc43007",
+					"jsonFile" : "target-MLIRLiveRangePassesIncGen-a7fcb4bb5d585bfe79b6.json",
+					"name" : "MLIRLiveRangePassesIncGen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RISCVTargetParserTableGen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RISCVTargetParserTableGen-fce90e52b387f917b271.json",
+					"name" : "RISCVTargetParserTableGen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "acc_gen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-acc_gen-a586474c17f383b83da1.json",
+					"name" : "acc_gen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "install-MLIRLifeRange::@9775b9ed26a913d18a58",
+					"jsonFile" : "target-install-MLIRLifeRange-3a0707c0daa85f24b21d.json",
+					"name" : "install-MLIRLifeRange",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "install-MLIRLifeRange-stripped::@9775b9ed26a913d18a58",
+					"jsonFile" : "target-install-MLIRLifeRange-stripped-77cdd311b2ec48e5d375.json",
+					"name" : "install-MLIRLifeRange-stripped",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "intrinsics_gen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-intrinsics_gen-42cf2bf244e002b12e25.json",
+					"name" : "intrinsics_gen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "lr-mlir-opt::@3ef8fcebb31cdc5868bc",
+					"jsonFile" : "target-lr-mlir-opt-bf04fa7471e774301d8f.json",
+					"name" : "lr-mlir-opt",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mlir-doc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mlir-doc-1c88ff9466efcda198a3.json",
+					"name" : "mlir-doc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mlir-generic-headers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mlir-generic-headers-ff7e83d0d063f39e1d4c.json",
+					"name" : "mlir-generic-headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mlir-headers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mlir-headers-c5c3e56cf1656ee867c2.json",
+					"name" : "mlir-headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mlir-tablegen-targets::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mlir-tablegen-targets-85463ee45f753a847754.json",
+					"name" : "mlir-tablegen-targets",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "obj.MLIRLifeRange::@9775b9ed26a913d18a58",
+					"jsonFile" : "target-obj.MLIRLifeRange-a47cc11f5c49769bdcf0.json",
+					"name" : "obj.MLIRLifeRange",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "omp_gen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-omp_gen-e62a394a5e69177965ff.json",
+					"name" : "omp_gen",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build",
+		"source" : "/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

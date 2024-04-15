@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/3.22.1/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/3.22.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,7 +23,7 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
 
 Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
 cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
@@ -32,9 +32,9 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8fdcd && [1/2] Building C object CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o
+Run Build Command(s):/usr/bin/ninja cmTC_ffb81 && [1/2] Building C object CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -44,8 +44,8 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8fdcd.dir/'
- /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8fdcd.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc9XkS0D.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ffb81.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_ffb81.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccT0XXXc.s
 GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -65,13 +65,13 @@ GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 50eaa2331df977b8016186198deb2d18
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8fdcd.dir/'
- as -v --64 -o CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o /tmp/cc9XkS0D.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ffb81.dir/'
+ as -v --64 -o CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o /tmp/ccT0XXXc.s
 GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.'
-[2/2] Linking C executable cmTC_8fdcd
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.'
+[2/2] Linking C executable cmTC_ffb81
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -84,9 +84,9 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8fdcd' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8fdcd.'
- /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWG5y5A.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8fdcd /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8fdcd' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8fdcd.'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ffb81' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ffb81.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuvzoaI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ffb81 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ffb81' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ffb81.'
 
 
 
@@ -107,9 +107,9 @@ Parsed C implicit include dir info from above output: rv=done
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_8fdcd && [1/2] Building C object CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o]
+  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_ffb81 && [1/2] Building C object CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -119,8 +119,8 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8fdcd.dir/']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8fdcd.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc9XkS0D.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ffb81.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_ffb81.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccT0XXXc.s]
   ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -140,13 +140,13 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 50eaa2331df977b8016186198deb2d18]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8fdcd.dir/']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o /tmp/cc9XkS0D.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ffb81.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o /tmp/ccT0XXXc.s]
   ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.']
-  ignore line: [[2/2] Linking C executable cmTC_8fdcd]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.']
+  ignore line: [[2/2] Linking C executable cmTC_ffb81]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -159,13 +159,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8fdcd' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8fdcd.']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWG5y5A.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8fdcd /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ffb81' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ffb81.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuvzoaI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ffb81 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccWG5y5A.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccuvzoaI.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -183,7 +183,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_8fdcd] ==> ignore
+    arg [cmTC_ffb81] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -195,7 +195,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-    arg [CMakeFiles/cmTC_8fdcd.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_ffb81.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -227,9 +227,9 @@ Parsed C implicit link information from above output:
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_45417 && [1/2] Building CXX object CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o
+Run Build Command(s):/usr/bin/ninja cmTC_67807 && [1/2] Building CXX object CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -239,8 +239,8 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45417.dir/'
- /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_45417.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccbtiG3t.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_67807.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_67807.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccSbhAs8.s
 GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -264,13 +264,13 @@ GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: d591828bb4d392ae8b7b160e5bb0b95f
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45417.dir/'
- as -v --64 -o CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbtiG3t.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_67807.dir/'
+ as -v --64 -o CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccSbhAs8.s
 GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.'
-[2/2] Linking CXX executable cmTC_45417
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.'
+[2/2] Linking CXX executable cmTC_67807
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -283,9 +283,9 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45417' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_45417.'
- /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc20AxJR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_45417 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45417' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_45417.'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_67807' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_67807.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cccC6MLe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_67807 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_67807' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_67807.'
 
 
 
@@ -312,9 +312,9 @@ Parsed CXX implicit include dir info from above output: rv=done
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_45417 && [1/2] Building CXX object CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_67807 && [1/2] Building CXX object CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -324,8 +324,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45417.dir/']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_45417.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccbtiG3t.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_67807.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_67807.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccSbhAs8.s]
   ignore line: [GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -349,13 +349,13 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: d591828bb4d392ae8b7b160e5bb0b95f]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45417.dir/']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbtiG3t.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_67807.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccSbhAs8.s]
   ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.']
-  ignore line: [[2/2] Linking CXX executable cmTC_45417]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [[2/2] Linking CXX executable cmTC_67807]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -368,13 +368,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45417' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_45417.']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc20AxJR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_45417 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_67807' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_67807.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cccC6MLe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_67807 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc20AxJR.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cccC6MLe.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -392,7 +392,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_45417] ==> ignore
+    arg [cmTC_67807] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -404,7 +404,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-    arg [CMakeFiles/cmTC_45417.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_67807.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -431,188 +431,181 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
-Performing C SOURCE FILE Test HAVE_FFI_CALL succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/ninja cmTC_044f5 && [1/2] Building C object CMakeFiles/cmTC_044f5.dir/src.c.o
-[2/2] Linking C executable cmTC_044f5
-
-
-Source file was:
-
-    struct ffi_cif;
-    typedef struct ffi_cif ffi_cif;
-    void ffi_call(ffi_cif *cif, void (*fn)(void), void *rvalue, void **avalue);
-    int main() { ffi_call(0, 0, 0, 0); }
 Performing C SOURCE FILE Test Terminfo_LINKABLE succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_5200f && [1/2] Building C object CMakeFiles/cmTC_5200f.dir/src.c.o
-[2/2] Linking C executable cmTC_5200f
+Run Build Command(s):/usr/bin/ninja cmTC_035c9 && [1/2] Building C object CMakeFiles/cmTC_035c9.dir/src.c.o
+[2/2] Linking C executable cmTC_035c9
 
 
 Source file was:
-
+    #ifdef __cplusplus
+    extern "C" {
+    #endif
     int setupterm(char *term, int filedes, int *errret);
-    int main() { return setupterm(0, 0, 0); }
+    #ifdef __cplusplus
+    }
+    #endif
+    int main(void) { return setupterm(0, 0, 0); }
+    
 Performing C SOURCE FILE Test C_SUPPORTS_FPIC succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_eaf86 && [1/2] Building C object CMakeFiles/cmTC_eaf86.dir/src.c.o
-[2/2] Linking C executable cmTC_eaf86
+Run Build Command(s):/usr/bin/ninja cmTC_39235 && [1/2] Building C object CMakeFiles/cmTC_39235.dir/src.c.o
+[2/2] Linking C executable cmTC_39235
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_FPIC succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9728a && [1/2] Building CXX object CMakeFiles/cmTC_9728a.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_9728a
+Run Build Command(s):/usr/bin/ninja cmTC_3ba18 && [1/2] Building CXX object CMakeFiles/cmTC_3ba18.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_3ba18
 
 
 Source file was:
 int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_FNO_SEMANTIC_INTERPOSITION succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_4b95f && [1/2] Building C object CMakeFiles/cmTC_4b95f.dir/src.c.o
-[2/2] Linking C executable cmTC_4b95f
+Run Build Command(s):/usr/bin/ninja cmTC_95d73 && [1/2] Building C object CMakeFiles/cmTC_95d73.dir/src.c.o
+[2/2] Linking C executable cmTC_95d73
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_82e82 && [1/2] Building CXX object CMakeFiles/cmTC_82e82.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_82e82
+Run Build Command(s):/usr/bin/ninja cmTC_3e0e3 && [1/2] Building CXX object CMakeFiles/cmTC_3e0e3.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_3e0e3
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_bf382 && [1/2] Building CXX object CMakeFiles/cmTC_bf382.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_bf382
+Run Build Command(s):/usr/bin/ninja cmTC_ffdff && [1/2] Building CXX object CMakeFiles/cmTC_ffdff.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_ffdff
 
 
 Source file was:
 int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_WERROR_DATE_TIME succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_7cc31 && [1/2] Building C object CMakeFiles/cmTC_7cc31.dir/src.c.o
-[2/2] Linking C executable cmTC_7cc31
+Run Build Command(s):/usr/bin/ninja cmTC_60a6f && [1/2] Building C object CMakeFiles/cmTC_60a6f.dir/src.c.o
+[2/2] Linking C executable cmTC_60a6f
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_WERROR_DATE_TIME succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_f80e9 && [1/2] Building CXX object CMakeFiles/cmTC_f80e9.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_f80e9
+Run Build Command(s):/usr/bin/ninja cmTC_e11ff && [1/2] Building CXX object CMakeFiles/cmTC_e11ff.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_e11ff
 
 
 Source file was:
 int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_CMAKE_CXX_FLAGS succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_4948c && [1/2] Building C object CMakeFiles/cmTC_4948c.dir/src.c.o
-[2/2] Linking C executable cmTC_4948c
+Run Build Command(s):/usr/bin/ninja cmTC_b8a4d && [1/2] Building C object CMakeFiles/cmTC_b8a4d.dir/src.c.o
+[2/2] Linking C executable cmTC_b8a4d
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_CMAKE_CXX_FLAGS succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_173af && [1/2] Building CXX object CMakeFiles/cmTC_173af.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_173af
+Run Build Command(s):/usr/bin/ninja cmTC_6a078 && [1/2] Building CXX object CMakeFiles/cmTC_6a078.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_6a078
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_4c625 && [1/2] Building CXX object CMakeFiles/cmTC_4c625.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_4c625
+Run Build Command(s):/usr/bin/ninja cmTC_4438f && [1/2] Building CXX object CMakeFiles/cmTC_4438f.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_4438f
 
 
 Source file was:
 int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_0c161 && [1/2] Building C object CMakeFiles/cmTC_0c161.dir/src.c.o
-[2/2] Linking C executable cmTC_0c161
+Run Build Command(s):/usr/bin/ninja cmTC_c36dd && [1/2] Building C object CMakeFiles/cmTC_c36dd.dir/src.c.o
+[2/2] Linking C executable cmTC_c36dd
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8f963 && [1/2] Building CXX object CMakeFiles/cmTC_8f963.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_8f963
+Run Build Command(s):/usr/bin/ninja cmTC_67fd9 && [1/2] Building CXX object CMakeFiles/cmTC_67fd9.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_67fd9
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_CLASS_MEMACCESS_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_67055 && [1/2] Building CXX object CMakeFiles/cmTC_67055.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_67055
+Run Build Command(s):/usr/bin/ninja cmTC_f55ac && [1/2] Building CXX object CMakeFiles/cmTC_f55ac.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_f55ac
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_REDUNDANT_MOVE_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_4e001 && [1/2] Building CXX object CMakeFiles/cmTC_4e001.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_4e001
+Run Build Command(s):/usr/bin/ninja cmTC_87433 && [1/2] Building CXX object CMakeFiles/cmTC_87433.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_87433
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_PESSIMIZING_MOVE_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_beac7 && [1/2] Building CXX object CMakeFiles/cmTC_beac7.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_beac7
+Run Build Command(s):/usr/bin/ninja cmTC_8c755 && [1/2] Building CXX object CMakeFiles/cmTC_8c755.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_8c755
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_NOEXCEPT_TYPE_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c30f5 && [1/2] Building CXX object CMakeFiles/cmTC_c30f5.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_c30f5
+Run Build Command(s):/usr/bin/ninja cmTC_5a6e7 && [1/2] Building CXX object CMakeFiles/cmTC_5a6e7.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_5a6e7
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_2b7d5 && [1/2] Building CXX object CMakeFiles/cmTC_2b7d5.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_2b7d5
+Run Build Command(s):/usr/bin/ninja cmTC_8c6b8 && [1/2] Building CXX object CMakeFiles/cmTC_8c6b8.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_8c6b8
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_7af6b && [1/2] Building CXX object CMakeFiles/cmTC_7af6b.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_7af6b
+Run Build Command(s):/usr/bin/ninja cmTC_c63bd && [1/2] Building CXX object CMakeFiles/cmTC_c63bd.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_c63bd
 
 
 Source file was:
@@ -620,64 +613,64 @@ class base {public: virtual void anchor();};
                                class derived : base {public: void anchor() final;};
                                int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_MISLEADING_INDENTATION_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c41a7 && [1/2] Building CXX object CMakeFiles/cmTC_c41a7.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_c41a7
+Run Build Command(s):/usr/bin/ninja cmTC_5c88a && [1/2] Building CXX object CMakeFiles/cmTC_5c88a.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_5c88a
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_29bf7 && [1/2] Building CXX object CMakeFiles/cmTC_29bf7.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_29bf7
+Run Build Command(s):/usr/bin/ninja cmTC_35c57 && [1/2] Building CXX object CMakeFiles/cmTC_35c57.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_35c57
 
 
 Source file was:
 int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_FNO_FUNCTION_SECTIONS succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_36e46 && [1/2] Building C object CMakeFiles/cmTC_36e46.dir/src.c.o
-[2/2] Linking C executable cmTC_36e46
+Run Build Command(s):/usr/bin/ninja cmTC_b2737 && [1/2] Building C object CMakeFiles/cmTC_b2737.dir/src.c.o
+[2/2] Linking C executable cmTC_b2737
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_FFUNCTION_SECTIONS succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_3b65d && [1/2] Building C object CMakeFiles/cmTC_3b65d.dir/src.c.o
-[2/2] Linking C executable cmTC_3b65d
+Run Build Command(s):/usr/bin/ninja cmTC_717a6 && [1/2] Building C object CMakeFiles/cmTC_717a6.dir/src.c.o
+[2/2] Linking C executable cmTC_717a6
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_FFUNCTION_SECTIONS succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8babb && [1/2] Building CXX object CMakeFiles/cmTC_8babb.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_8babb
+Run Build Command(s):/usr/bin/ninja cmTC_84b03 && [1/2] Building CXX object CMakeFiles/cmTC_84b03.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_84b03
 
 
 Source file was:
 int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_FDATA_SECTIONS succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c966e && [1/2] Building C object CMakeFiles/cmTC_c966e.dir/src.c.o
-[2/2] Linking C executable cmTC_c966e
+Run Build Command(s):/usr/bin/ninja cmTC_95977 && [1/2] Building C object CMakeFiles/cmTC_95977.dir/src.c.o
+[2/2] Linking C executable cmTC_95977
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_FDATA_SECTIONS succeeded with the following output:
-Change Dir: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_fe708 && [1/2] Building CXX object CMakeFiles/cmTC_fe708.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_fe708
+Run Build Command(s):/usr/bin/ninja cmTC_83732 && [1/2] Building CXX object CMakeFiles/cmTC_83732.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_83732
 
 
 Source file was:

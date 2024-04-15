@@ -1,4 +1,4 @@
-# Install script for directory: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP
+# Install script for directory: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,17 +44,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/include/cmake_install.cmake")
+  include("/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/include/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/tools/cmake_install.cmake")
+  include("/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/tools/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/lib/cmake_install.cmake")
+  include("/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/lib/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -65,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

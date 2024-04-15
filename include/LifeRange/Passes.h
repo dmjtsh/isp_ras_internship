@@ -1,7 +1,7 @@
 #ifndef LIFE_RANGE_PASSES_H
 #define LIFE_RANGE_PASSES_H
 
-#include "mlir/Pass/Pass.h"
+#include <mlir/Pass/Pass.h>
 #include <limits>
 
 namespace mlir {

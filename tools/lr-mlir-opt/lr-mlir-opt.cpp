@@ -1,8 +1,8 @@
-#include "mlir/IR/MLIRContext.h"
-#include "mlir/InitAllDialects.h"
-#include "mlir/InitAllPasses.h"
-#include "mlir/Support/FileUtilities.h"
-#include "mlir/Tools/mlir-opt/MlirOptMain.h"
+#include <mlir/IR/MLIRContext.h>
+#include <mlir/InitAllDialects.h>
+#include <mlir/InitAllPasses.h>
+#include <mlir/Support/FileUtilities.h>
+#include <mlir/Tools/mlir-opt/MlirOptMain.h>
 
 #include "LifeRange/Passes.h"
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/include/LifeRange
+# Install script for directory: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/include/LifeRange
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

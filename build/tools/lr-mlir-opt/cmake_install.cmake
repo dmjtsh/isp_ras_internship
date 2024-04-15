@@ -1,4 +1,4 @@
-# Install script for directory: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/tools/lr-mlir-opt
+# Install script for directory: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/tools/lr-mlir-opt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

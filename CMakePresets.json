@@ -1,0 +1,67 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21
+    },
+    "configurePresets": [
+        {
+            "name": "base-variables",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++",
+                "BUILD_SHARED_LIBS": "On",
+                "MLIR_INCLUDE_TESTS": "On"
+            }
+        },
+
+        {
+            "name": "base-debug",
+            "inherits":["base-variables"],
+            "displayName": "base-debug",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "LLVM_DIR": "$env{TEST_WORKDIR}/llvm-build-debug/lib/cmake/llvm",
+                "MLIR_DIR": "$env{TEST_WORKDIR}/llvm-build-debug/lib/cmake/mlir"
+            }
+        },
+        {
+            "name": "base-release",
+            "inherits":["base-variables"],
+            "displayName": "base-release",
+            "binaryDir": "${sourceDir}/release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "LLVM_DIR": "$env{TEST_WORKDIR}/llvm-build-release/lib/cmake/llvm",
+                "MLIR_DIR": "$env{TEST_WORKDIR}/llvm-build-release/lib/cmake/mlir"
+            }
+        },
+        {
+            "name": "base-relwithdebinfo",
+            "inherits":["base-variables"],
+            "displayName": "base-relwithdebinfo",
+            "binaryDir": "${sourceDir}/release_and_debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "LLVM_DIR": "$env{TEST_WORKDIR}/llvm-build-relWithDebInfo/lib/cmake/llvm",
+                "MLIR_DIR": "$env{TEST_WORKDIR}/llvm-build-relWithDebInfo/lib/cmake/mlir"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "base-debug",
+            "configurePreset": "base-debug"
+        },
+        {
+            "name": "base-release",
+            "configurePreset": "base-release"
+        },
+        {
+            "name": "base-relwithdebinfo",
+            "configurePreset": "base-relwithdebinfo"
+        }
+    ]
+}

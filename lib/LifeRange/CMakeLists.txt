@@ -8,6 +8,7 @@ add_mlir_dialect_library(MLIRLifeRange
         MLIRLiveRangePassesIncGen
 
         LINK_LIBS PUBLIC
+        MLIRMemRefDialect
         MLIRFuncDialect
         MLIRPass
 )

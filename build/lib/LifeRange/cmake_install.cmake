@@ -1,4 +1,4 @@
-# Install script for directory: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/lib/LifeRange
+# Install script for directory: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/lib/LifeRange
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,6 +43,6 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xMLIRLifeRangex" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/lib/libMLIRLifeRange.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/lib/libMLIRLifeRange.a")
 endif()
 

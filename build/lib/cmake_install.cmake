@@ -1,4 +1,4 @@
-# Install script for directory: /home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/lib
+# Install script for directory: /home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/dmit/PROGRAMMING/LLVM/llvm-project/mlir/include/ISP_RAS_INTERSHIP/build/lib/LifeRange/cmake_install.cmake")
+  include("/home/dmit/Desktop/PROGA/ISP_RAS_INTERSHIP/build/lib/LifeRange/cmake_install.cmake")
 endif()
 

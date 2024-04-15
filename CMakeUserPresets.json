@@ -1,0 +1,49 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "debug",
+            "inherits": [
+                "base-debug"
+            ],
+            "displayName": "debug",
+            "environment": {
+                "TEST_WORKDIR": "/home/dmit/PROGRAMMING/LLVM/llvm-project"
+            }
+        },
+        {
+            "name": "release",
+            "inherits": [
+                "base-release"
+            ],
+            "displayName": "release",
+            "environment": {
+                "TEST_WORKDIR": "/home/dmit/PROGRAMMING/LLVM/llvm-project"
+            }
+        },
+        {
+            "name": "relwithdebinfo",
+            "inherits": [
+                "base-relwithdebinfo"
+            ],
+            "displayName": "relwithdebinfo",
+            "environment": {
+                "TEST_WORKDIR": "/home/dmit/PROGRAMMING/LLVM/llvm-project"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug",
+            "configurePreset": "debug"
+        },
+        {
+            "name": "release",
+            "configurePreset": "release"
+        },
+        {
+            "name": "relwithdebinfo",
+            "configurePreset": "relwithdebinfo"
+        }
+    ]
+}
