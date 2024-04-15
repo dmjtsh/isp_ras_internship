@@ -3,8 +3,7 @@
 
 include "mlir/Pass/PassBase.td"
 
-def LifeRange : Pass<"life-range", "func::FuncOp"> 
-{
+def LifeRange : Pass<"life-range", "func::FuncOp"> {
     let summary = "Life Range Pass to show life cycles of variables";
     
     let constructor = "mlir::liferange::createLifeRangePass()";

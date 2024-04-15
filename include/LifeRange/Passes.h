@@ -1,8 +1,8 @@
 #ifndef LIFE_RANGE_PASSES_H
 #define LIFE_RANGE_PASSES_H
 
-#include <mlir/Pass/Pass.h>
 #include <limits>
+#include <mlir/Pass/Pass.h>
 
 namespace mlir {
 
@@ -16,8 +16,7 @@ namespace liferange {
 
 #include "LifeRange/Passes.h.inc"
 
-std::unique_ptr<OperationPass<func::FuncOp>> 
-	createLifeRangePass();
+std::unique_ptr<OperationPass<func::FuncOp>> createLifeRangePass();
 
 //===----------------------------------------------------------------------===//
 // Registration

@@ -6,13 +6,12 @@
 
 #include "LifeRange/Passes.h"
 
-int main(int argc, char **argv) 
-{
-    mlir::liferange::registerPasses();
+int main(int argc, char **argv) {
+  mlir::liferange::registerPasses();
 
-    mlir::DialectRegistry registry;
-    mlir::registerAllDialects(registry);
+  mlir::DialectRegistry registry;
+  mlir::registerAllDialects(registry);
 
-    return mlir::asMainReturnCode(
-        mlir::MlirOptMain(argc, argv, "Life Range Pass Driver", registry));
+  return mlir::asMainReturnCode(
+      mlir::MlirOptMain(argc, argv, "Life Range Pass Driver", registry));
 }
