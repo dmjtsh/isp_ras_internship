@@ -1,5 +1,5 @@
 // normal
-func.func @test2(%input : memref<16xf16>) {
+func.func @test3(%input : memref<16xf16>) {
   %alloc = memref.alloc() : memref<10xi32>
 
   %c1_i32 = arith.constant 1 : i32

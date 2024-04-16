@@ -1,5 +1,5 @@
 // easy
-func.func @test0() {
+func.func @test1() {
   %alloc = memref.alloc() : memref<16xf16>
   %c1 = arith.constant 1 : index
   %c1_i32 = arith.constant 1 : i32
