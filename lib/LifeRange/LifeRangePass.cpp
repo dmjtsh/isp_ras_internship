@@ -1,4 +1,5 @@
 #include <llvm/Support/raw_ostream.h>
+#include <mlir/Analysis/AliasAnalysis.h>
 #include <mlir/Analysis/Liveness.h>
 #include <mlir/Dialect/Func/IR/FuncOps.h>
 #include <mlir/Dialect/MemRef/IR/MemRef.h>
@@ -10,6 +11,7 @@
 
 #include "LifeRange/Passes.h"
 #include <algorithm>
+#include <string>
 #include <iostream>
 
 namespace mlir {
@@ -42,10 +44,52 @@ size_t SearchMinLiveInd(Liveness::OperationListT live_operations,
   return min_ind;
 }
 
+void LifeAliasAnalysis(
+    AliasAnalysis *alias, std::vector<Value> *memrefs_to_print,
+    std::vector<std::pair<size_t, size_t>> *values_intervals) {
+
+  for (int i = 0; i < (int)memrefs_to_print->size(); i++) {
+    for (int j = i + 1; j < (int)memrefs_to_print->size(); j++) {
+      if (alias->alias((*memrefs_to_print)[i], (*memrefs_to_print)[j]) ==
+          AliasResult::MustAlias) {
+        
+        // DEBUG
+        std::string num1Str = std::to_string((*values_intervals)[i].first);
+        std::string num2Str = std::to_string((*values_intervals)[j].first);
+        std::string num3Str = std::to_string((*values_intervals)[i].second);
+        std::string num4Str = std::to_string((*values_intervals)[j].second);
+
+        llvm::outs() << "First Memref:[" << num1Str << " "  << num3Str <<" ]\n" ;
+        llvm::outs() << "Second Memref:[" << num2Str << " "  << num4Str <<" ]\n" ;
+        // DEBUG
+
+        if ((*values_intervals)[i].first > (*values_intervals)[j].first)
+          (*values_intervals)[i].first = (*values_intervals)[j].first;
+
+        if ((*values_intervals)[i].second < (*values_intervals)[j].second)
+          (*values_intervals)[i].second = (*values_intervals)[j].second;
+
+        // Resting Old Pointer
+        memrefs_to_print->erase(memrefs_to_print->begin() + j);
+        values_intervals->erase(values_intervals->begin() + j);
+
+        // DEBUG
+        num1Str = std::to_string((*values_intervals)[i].first);
+        num3Str = std::to_string((*values_intervals)[i].second);
+        llvm::outs() << "After Transformation Memref:[" << num1Str << " "  << num3Str <<" ]\n" ;
+        // DEBUG
+
+        i--;
+        break;
+      }
+    }
+  }
+}
+
 // Prints  Values Life Intervals in brackets
 // Returns Values Life Ranges
 std::vector<std::pair<size_t, size_t>>
-PrintValuesLifeRanges(Liveness *liveness) {
+PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
   DenseMap<Block *, size_t> block_ids;
   DenseMap<Operation *, size_t> operation_ids;
   DenseMap<Value, size_t> value_ids;
@@ -77,7 +121,7 @@ PrintValuesLifeRanges(Liveness *liveness) {
     llvm::outs() << ": [" << interval.first << "; " << interval.second << "]\n";
   };
 
-  std::vector<Value> memref_to_print(value_ids.size());
+  std::vector<Value> memrefs_to_print(value_ids.size());
   std::vector<std::pair<size_t, size_t>> values_intervals(value_ids.size());
   std::pair<size_t, size_t> result_interval;
 
@@ -88,7 +132,7 @@ PrintValuesLifeRanges(Liveness *liveness) {
         result_interval.first = operation_ids[&block->front()];
         result_interval.second = operation_ids[&block->back()];
 
-        memref_to_print.push_back(arg);
+        memrefs_to_print.push_back(arg);
         values_intervals.push_back(result_interval);
       }
     }
@@ -130,15 +174,17 @@ PrintValuesLifeRanges(Liveness *liveness) {
           // Setting Value And Interval of Value with Its Index
           size_t result_index = value_ids[result];
           values_intervals[result_index] = result_interval;
-          memref_to_print[result_index] = result;
+          memrefs_to_print[result_index] = result;
         }
       }
     }
   });
 
+  LifeAliasAnalysis(alias, &memrefs_to_print, &values_intervals);
+
   // Printing all Other Memrefs
-  for (size_t i = 0; i < memref_to_print.size(); i++)
-    printMemref(memref_to_print[i], values_intervals[i]);
+  for (size_t i = 0; i < memrefs_to_print.size(); i++)
+    printMemref(memrefs_to_print[i], values_intervals[i]);
 
   return values_intervals;
 }
@@ -170,13 +216,14 @@ struct LifeRangePass : public liferange::impl::LifeRangeBase<LifeRangePass> {
 
   void runOnOperation() override {
     Liveness &lv = getAnalysis<Liveness>();
+    AliasAnalysis &aa = getAnalysis<AliasAnalysis>();
 
     llvm::raw_ostream &os = llvm::outs();
     lv.print(os);
 
     llvm::outs() << "\n----------LifeRangePass----------\n\n";
     std::vector<std::pair<size_t, size_t>> life_ranges =
-        PrintValuesLifeRanges(&lv);
+        PrintValuesLifeRanges(&lv, &aa);
     PrintIndependentLifeRanges(life_ranges);
     llvm::outs() << "----------LifeRangePass----------\n\n";
   }
