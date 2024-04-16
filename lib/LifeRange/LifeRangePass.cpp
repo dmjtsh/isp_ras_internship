@@ -51,9 +51,9 @@ PrintValuesLifeRanges(Liveness *liveness) {
   liveness->getOperation()->walk<WalkOrder::PostOrder>([&](Block *block) {
     block_ids.insert({block, block_ids.size()});
     for (Operation &operation : *block) {
-      
+
       // DEBUG
-      std::cout << "  <--- Operation #" << operation_ids.size(); 
+      std::cout << "  <--- Operation #" << operation_ids.size();
       llvm::raw_ostream &os = llvm::outs();
       operation.print(os);
       std::cout << "\n";
@@ -157,7 +157,7 @@ struct LifeRangePass : public liferange::impl::LifeRangeBase<LifeRangePass> {
     std::vector<std::pair<size_t, size_t>> life_ranges =
         PrintValuesLifeRanges(&lv);
     PrintIndependentLifeRanges(life_ranges);
-    llvm::outs() <<   "----------LifeRangePass----------\n\n";
+    llvm::outs() << "----------LifeRangePass----------\n\n";
   }
 };
 
