@@ -2,8 +2,10 @@
 #include <mlir/Analysis/Liveness.h>
 #include <mlir/Dialect/Func/IR/FuncOps.h>
 #include <mlir/Dialect/MemRef/IR/MemRef.h>
+#include <mlir/Dialect/SCF/IR/SCF.h>
 #include <mlir/IR/Block.h>
 #include <mlir/IR/Operation.h>
+#include <mlir/IR/Region.h>
 #include <mlir/IR/Value.h>
 
 #include "LifeRange/Passes.h"
@@ -48,25 +50,19 @@ PrintValuesLifeRanges(Liveness *liveness) {
   DenseMap<Operation *, size_t> operation_ids;
   DenseMap<Value, size_t> value_ids;
 
-  liveness->getOperation()->walk<WalkOrder::PostOrder>([&](Block *block) {
+  liveness->getOperation()->walk<WalkOrder::PreOrder>([&](Block *block) {
     block_ids.insert({block, block_ids.size()});
-    for (Operation &operation : *block) {
-
-      // DEBUG
-      std::cout << "  <--- Operation #" << operation_ids.size();
-      llvm::raw_ostream &os = llvm::outs();
-      operation.print(os);
-      std::cout << "\n";
-      // DEBUG
-
-      operation_ids.insert({&operation, operation_ids.size()});
-      for (Value result : operation.getResults()) {
-        // Filling array with memref indexes for printing it
-        if (isa<TypedValue<MemRefType>>(result))
-          value_ids.insert({result, value_ids.size()});
-      }
-    }
   });
+
+  liveness->getOperation()->walk<WalkOrder::PreOrder>(
+      [&](Operation *operation) {
+        operation_ids.insert({operation, operation_ids.size() - 1});
+        for (Value result : operation->getResults()) {
+          // Filling array with memref indexes for printing it
+          if (isa<TypedValue<MemRefType>>(result))
+            value_ids.insert({result, value_ids.size()});
+        }
+      });
 
   // Lambda Function for Printing Memref's Name
   auto printMemref = [&](Value value, std::pair<size_t, size_t> interval) {
@@ -81,24 +77,47 @@ PrintValuesLifeRanges(Liveness *liveness) {
     llvm::outs() << ": [" << interval.first << "; " << interval.second << "]\n";
   };
 
+  std::vector<Value> memref_to_print(value_ids.size());
   std::vector<std::pair<size_t, size_t>> values_intervals(value_ids.size());
   std::pair<size_t, size_t> result_interval;
 
   liveness->getOperation()->walk<WalkOrder::PreOrder>([&](Block *block) {
-    // Print Memref Arguments of blocks
+    // Adding Memref Arguments of blocks
     for (Value arg : block->getArguments()) {
       if (isa<TypedValue<MemRefType>>(arg)) {
         result_interval.first = operation_ids[&block->front()];
         result_interval.second = operation_ids[&block->back()];
 
-        printMemref(arg, result_interval);
+        memref_to_print.push_back(arg);
+        values_intervals.push_back(result_interval);
       }
     }
 
-    // Print liveness intervals.
     for (Operation &op : *block) {
       if (op.getNumResults() < 1)
         continue;
+
+      // Checking if we are in Cycle Block
+      if (isa<scf::ForOp>(op)) {
+        const LivenessBlockInfo *block_liveness = liveness->getLiveness(block);
+        auto currently_live_values = block_liveness->currentlyLiveValues(&op);
+
+        // Last Block of Cycle
+        Block &cycle_block = op.getRegions().back().back();
+        size_t cycle_block_end_ind = operation_ids[&cycle_block.back()];
+
+        for (Value value : currently_live_values) {
+          if (isa<TypedValue<MemRefType>>(value)) {
+            size_t current_value_max_ind =
+                values_intervals[value_ids[value]].second;
+
+            // Setting New Maximum Interval for a var that is in Cycle Block
+            if (current_value_max_ind < cycle_block_end_ind)
+              values_intervals[value_ids[value]].second = cycle_block_end_ind;
+          }
+        }
+      }
+
       for (Value result : op.getResults()) {
         // If Value is Memref
         if (isa<TypedValue<MemRefType>>(result)) {
@@ -108,20 +127,22 @@ PrintValuesLifeRanges(Liveness *liveness) {
           result_interval.second =
               SearchMaxLiveInd(live_operations, operation_ids);
 
-          printMemref(result, result_interval);
-
-          // Setting Interval of Value with Its Index
+          // Setting Value And Interval of Value with Its Index
           size_t result_index = value_ids[result];
           values_intervals[result_index] = result_interval;
+          memref_to_print[result_index] = result;
         }
       }
     }
   });
 
+  // Printing all Other Memrefs
+  for (size_t i = 0; i < memref_to_print.size(); i++)
+    printMemref(memref_to_print[i], values_intervals[i]);
+
   return values_intervals;
 }
 
-// Prints Independent Life Ranges of Values
 void PrintIndependentLifeRanges(
     std::vector<std::pair<size_t, size_t>> life_ranges) {
   bool memory_can_be_united = false;
