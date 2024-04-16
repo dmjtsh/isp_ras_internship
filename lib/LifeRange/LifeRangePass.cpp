@@ -52,17 +52,6 @@ void LifeAliasAnalysis(
     for (int j = i + 1; j < (int)memrefs_to_print->size(); j++) {
       if (alias->alias((*memrefs_to_print)[i], (*memrefs_to_print)[j]) ==
           AliasResult::MustAlias) {
-        
-        // DEBUG
-        std::string num1Str = std::to_string((*values_intervals)[i].first);
-        std::string num2Str = std::to_string((*values_intervals)[j].first);
-        std::string num3Str = std::to_string((*values_intervals)[i].second);
-        std::string num4Str = std::to_string((*values_intervals)[j].second);
-
-        llvm::outs() << "First Memref:[" << num1Str << " "  << num3Str <<" ]\n" ;
-        llvm::outs() << "Second Memref:[" << num2Str << " "  << num4Str <<" ]\n" ;
-        // DEBUG
-
         if ((*values_intervals)[i].first > (*values_intervals)[j].first)
           (*values_intervals)[i].first = (*values_intervals)[j].first;
 
@@ -72,12 +61,6 @@ void LifeAliasAnalysis(
         // Resting Old Pointer
         memrefs_to_print->erase(memrefs_to_print->begin() + j);
         values_intervals->erase(values_intervals->begin() + j);
-
-        // DEBUG
-        num1Str = std::to_string((*values_intervals)[i].first);
-        num3Str = std::to_string((*values_intervals)[i].second);
-        llvm::outs() << "After Transformation Memref:[" << num1Str << " "  << num3Str <<" ]\n" ;
-        // DEBUG
 
         i--;
         break;
