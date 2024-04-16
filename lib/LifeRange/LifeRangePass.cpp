@@ -8,6 +8,7 @@
 
 #include "LifeRange/Passes.h"
 #include <algorithm>
+#include <iostream>
 
 namespace mlir {
 namespace liferange {
@@ -47,11 +48,17 @@ PrintValuesLifeRanges(Liveness *liveness) {
   DenseMap<Operation *, size_t> operation_ids;
   DenseMap<Value, size_t> value_ids;
 
-  liveness->getOperation()->walk<WalkOrder::PreOrder>([&](Block *block) {
+  liveness->getOperation()->walk<WalkOrder::PostOrder>([&](Block *block) {
     block_ids.insert({block, block_ids.size()});
-    for (BlockArgument argument : block->getArguments())
-      value_ids.insert({argument, value_ids.size()});
     for (Operation &operation : *block) {
+      
+      // DEBUG
+      std::cout << "  <--- Operation #" << operation_ids.size(); 
+      llvm::raw_ostream &os = llvm::outs();
+      operation.print(os);
+      std::cout << "\n";
+      // DEBUG
+
       operation_ids.insert({&operation, operation_ids.size()});
       for (Value result : operation.getResults()) {
         // Filling array with memref indexes for printing it
@@ -62,15 +69,32 @@ PrintValuesLifeRanges(Liveness *liveness) {
   });
 
   // Lambda Function for Printing Memref's Name
-  auto printValue = [&](Value value) {
+  auto printMemref = [&](Value value, std::pair<size_t, size_t> interval) {
     if (value.getDefiningOp())
       llvm::outs() << "memref_" << value_ids[value];
+    else {
+      auto block_arg = cast<BlockArgument>(value);
+      llvm::outs() << "memref_arg" << block_arg.getArgNumber() << "@"
+                   << block_ids[block_arg.getOwner()];
+    }
+
+    llvm::outs() << ": [" << interval.first << "; " << interval.second << "]\n";
   };
 
   std::vector<std::pair<size_t, size_t>> values_intervals(value_ids.size());
   std::pair<size_t, size_t> result_interval;
 
   liveness->getOperation()->walk<WalkOrder::PreOrder>([&](Block *block) {
+    // Print Memref Arguments of blocks
+    for (Value arg : block->getArguments()) {
+      if (isa<TypedValue<MemRefType>>(arg)) {
+        result_interval.first = operation_ids[&block->front()];
+        result_interval.second = operation_ids[&block->back()];
+
+        printMemref(arg, result_interval);
+      }
+    }
+
     // Print liveness intervals.
     for (Operation &op : *block) {
       if (op.getNumResults() < 1)
@@ -78,17 +102,13 @@ PrintValuesLifeRanges(Liveness *liveness) {
       for (Value result : op.getResults()) {
         // If Value is Memref
         if (isa<TypedValue<MemRefType>>(result)) {
-          printValue(result);
-          llvm::outs() << ":";
-
           auto live_operations = liveness->resolveLiveness(result);
           result_interval.first =
               SearchMinLiveInd(live_operations, operation_ids);
           result_interval.second =
               SearchMaxLiveInd(live_operations, operation_ids);
 
-          llvm::outs() << "[" << result_interval.first << "; "
-                       << result_interval.second << "]\n";
+          printMemref(result, result_interval);
 
           // Setting Interval of Value with Its Index
           size_t result_index = value_ids[result];
@@ -96,7 +116,6 @@ PrintValuesLifeRanges(Liveness *liveness) {
         }
       }
     }
-    llvm::outs() << "\n";
   });
 
   return values_intervals;
@@ -134,8 +153,11 @@ struct LifeRangePass : public liferange::impl::LifeRangeBase<LifeRangePass> {
     llvm::raw_ostream &os = llvm::outs();
     lv.print(os);
 
-    // std::vector<std::pair<size_t, size_t>> life_ranges =
-    // PrintValuesLifeRanges(&lv); PrintIndependentLifeRanges(life_ranges);
+    llvm::outs() << "\n----------LifeRangePass----------\n\n";
+    std::vector<std::pair<size_t, size_t>> life_ranges =
+        PrintValuesLifeRanges(&lv);
+    PrintIndependentLifeRanges(life_ranges);
+    llvm::outs() <<   "----------LifeRangePass----------\n\n";
   }
 };
 
