@@ -102,21 +102,6 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
         }
       });
 
-  // Lambda Function for Printing Memref's Name
-  auto printMemref = [&](Value value, std::pair<size_t, size_t> interval,
-                         size_t memref_num) {
-    llvm::outs() << "(" << memref_num << ") ";
-    if (value.getDefiningOp())
-      llvm::outs() << "memref_" << value_ids[value];
-    else {
-      auto block_arg = cast<BlockArgument>(value);
-      llvm::outs() << "memref_arg" << block_arg.getArgNumber() << "@"
-                   << block_ids[block_arg.getOwner()];
-    }
-
-    llvm::outs() << ": [" << interval.first << "; " << interval.second << "]\n";
-  };
-
   std::vector<Value> memrefs_to_print(value_ids.size());
   std::vector<std::pair<size_t, size_t>> values_intervals(value_ids.size());
   std::pair<size_t, size_t> result_interval;
@@ -174,6 +159,21 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
 
   LifeAliasAnalysis(alias, &memrefs_to_print, &values_intervals);
 
+  // Lambda Function for Printing Memref's Name
+  auto printMemref = [&](Value value, std::pair<size_t, size_t> interval,
+                         size_t memref_num) {
+    llvm::outs() << "(" << memref_num << ") ";
+    if (value.getDefiningOp())
+      llvm::outs() << "memref_" << value_ids[value];
+    else {
+      auto block_arg = cast<BlockArgument>(value);
+      llvm::outs() << "memref_arg" << block_arg.getArgNumber() << "@"
+                   << block_ids[block_arg.getOwner()];
+    }
+
+    llvm::outs() << ": [" << interval.first << "; " << interval.second << "]\n";
+  };
+
   // Printing all Memrefs
   for (size_t i = 0; i < memrefs_to_print.size(); i++)
     printMemref(memrefs_to_print[i], values_intervals[i], i);
@@ -222,7 +222,7 @@ struct LifeRangePass : public liferange::impl::LifeRangeBase<LifeRangePass> {
     llvm::outs() << "\n";
 
     PrintIndependentLifeRanges(life_ranges);
-    llvm::outs() << "----------LifeRangePass----------\n\n";
+    llvm::outs() <<   "----------LifeRangePass----------\n\n";
   }
 };
 
