@@ -56,6 +56,11 @@ void LifeAliasAnalysis(
   }
 }
 
+/*
+* Get Max/Min Live Index functions
+* Function for getting an index of First Operation in Life Range
+* to build proper Life Range Intervals of values
+*/
 size_t GetMaxLiveInd(Liveness::OperationListT live_operations,
                      DenseMap<Operation *, size_t> operation_ids) {
   size_t max_ind = 0;
@@ -64,7 +69,6 @@ size_t GetMaxLiveInd(Liveness::OperationListT live_operations,
 
   return max_ind;
 }
-
 size_t GetMinLiveInd(Liveness::OperationListT live_operations,
                      DenseMap<Operation *, size_t> operation_ids) {
   size_t min_ind = operation_ids.size();
@@ -75,12 +79,13 @@ size_t GetMinLiveInd(Liveness::OperationListT live_operations,
 }
 
 /*
-* Print Values Life Ranges Function
+* Print Values Life Ranges function
 * Scans all memrefs and Prints Life Intervals in Brackets
 * Returns Vector of Life Intervals 
 */
 std::vector<std::pair<size_t, size_t>>
 PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
+  // Arrays of Indexes
   DenseMap<Block *, size_t>     block_ids;
   DenseMap<Operation *, size_t> operation_ids;
   DenseMap<Value, size_t>       value_ids;
@@ -92,7 +97,6 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
       [&](Operation *operation) {
         operation_ids.insert({operation, operation_ids.size() - 1});
         for (Value result : operation->getResults()) {
-          // Filling array with Memref Indexes for Printing it
           if (isa<TypedValue<MemRefType>>(result))
             value_ids.insert({result, value_ids.size()});
         }
@@ -161,9 +165,8 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
           result_interval.second = GetMaxLiveInd(live_operations, operation_ids);
 
           // Setting Value And Interval of Value with Its Index
-          size_t result_index = value_ids[result];
-          values_intervals[result_index] = result_interval;
-          memrefs_to_print[result_index] = result;
+          values_intervals[value_ids[result]] = result_interval;
+          memrefs_to_print[value_ids[result]] = result;
         }
       }
     }
@@ -215,7 +218,7 @@ struct LifeRangePass : public liferange::impl::LifeRangeBase<LifeRangePass> {
     llvm::outs() << "\n----------LifeRangePass----------\n\n";
     std::vector<std::pair<size_t, size_t>> life_ranges =
         PrintValuesLifeRanges(&lv, &aa);
-
+    
     llvm::outs() << "\n";
 
     PrintIndependentLifeRanges(life_ranges);
