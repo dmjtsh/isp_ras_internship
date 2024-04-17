@@ -10,9 +10,8 @@
 #include <mlir/IR/Value.h>
 
 #include "LifeRange/Passes.h"
+
 #include <algorithm>
-#include <string>
-#include <iostream>
 
 namespace mlir {
 namespace liferange {
@@ -92,12 +91,15 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
       });
 
   // Lambda Function for Printing Memref's Name
-  auto printMemref = [&](Value value, std::pair<size_t, size_t> interval) {
+  auto printMemref = [&](Value value, std::pair<size_t, size_t> interval,
+                         size_t memref_num) {
+    llvm::outs() << "(" << memref_num << ") ";
     if (value.getDefiningOp())
       llvm::outs() << "memref_" << value_ids[value];
     else {
       auto block_arg = cast<BlockArgument>(value);
-      llvm::outs() << "memref_arg" << block_arg.getArgNumber() << "@"
+      llvm::outs() << "memref_arg"
+                   << block_arg.getArgNumber() << "@"
                    << block_ids[block_arg.getOwner()];
     }
 
@@ -167,7 +169,7 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
 
   // Printing all Other Memrefs
   for (size_t i = 0; i < memrefs_to_print.size(); i++)
-    printMemref(memrefs_to_print[i], values_intervals[i]);
+    printMemref(memrefs_to_print[i], values_intervals[i], i);
 
   return values_intervals;
 }
@@ -181,8 +183,8 @@ void PrintIndependentLifeRanges(
       if (life_ranges[i].second < life_ranges[j].first ||
           life_ranges[j].second < life_ranges[i].first) {
         memory_can_be_united = true;
-        llvm::outs() << "We can unite \"memref_" << i << "\" and "
-                     << "\"memref_" << j << "\" memory!\n";
+        llvm::outs() << "We can unite (" << i << ") and "
+                     << "(" << j << ") memory!\n";
       }
     }
   }
@@ -201,12 +203,15 @@ struct LifeRangePass : public liferange::impl::LifeRangeBase<LifeRangePass> {
     Liveness &lv = getAnalysis<Liveness>();
     AliasAnalysis &aa = getAnalysis<AliasAnalysis>();
 
-    llvm::raw_ostream &os = llvm::outs();
-    lv.print(os);
+    // llvm::raw_ostream &os = llvm::outs();
+    // lv.print(os);
 
     llvm::outs() << "\n----------LifeRangePass----------\n\n";
     std::vector<std::pair<size_t, size_t>> life_ranges =
         PrintValuesLifeRanges(&lv, &aa);
+        
+    llvm::outs() << "\n";
+
     PrintIndependentLifeRanges(life_ranges);
     llvm::outs() << "----------LifeRangePass----------\n\n";
   }
