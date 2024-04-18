@@ -25,6 +25,12 @@ namespace liferange {
 using namespace mlir;
 using namespace mlir::liferange;
 
+struct LifeInterval
+{
+  size_t start;
+  size_t end;
+}
+
 /*
  * Life Alias Analysis function
  * Checks all memrefs if they are Alias or not
@@ -32,17 +38,17 @@ using namespace mlir::liferange;
  */
 void LifeAliasAnalysis(
     AliasAnalysis *alias, std::vector<Value> *memrefs_to_print,
-    std::vector<std::pair<size_t, size_t>> *values_intervals) {
+    std::vector<LifeInterval> *values_intervals) {
 
   for (int i = 0; i < (int)memrefs_to_print->size(); i++) {
     for (int j = i + 1; j < (int)memrefs_to_print->size(); j++) {
       if (alias->alias((*memrefs_to_print)[i], (*memrefs_to_print)[j]) ==
           AliasResult::MustAlias) {
-        if ((*values_intervals)[i].first > (*values_intervals)[j].first)
-          (*values_intervals)[i].first = (*values_intervals)[j].first;
+        if ((*values_intervals)[i].start > (*values_intervals)[j].start)
+          (*values_intervals)[i].start = (*values_intervals)[j].start;
 
-        if ((*values_intervals)[i].second < (*values_intervals)[j].second)
-          (*values_intervals)[i].second = (*values_intervals)[j].second;
+        if ((*values_intervals)[i].end < (*values_intervals)[j].end)
+          (*values_intervals)[i].end = (*values_intervals)[j].end;
 
         // Leaving Oldest Memref
         memrefs_to_print->erase(memrefs_to_print->begin() + j);
@@ -103,15 +109,15 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
       });
 
   std::vector<Value> memrefs_to_print(value_ids.size());
-  std::vector<std::pair<size_t, size_t>> values_intervals(value_ids.size());
-  std::pair<size_t, size_t> result_interval;
+  std::vector<LifeInterval> values_intervals(value_ids.size());
+  LifeInterval result_interval;
 
   liveness->getOperation()->walk<WalkOrder::PreOrder>([&](Block *block) {
     // Adding Memref Arguments of blocks
     for (Value arg : block->getArguments()) {
       if (isa<TypedValue<MemRefType>>(arg)) {
-        result_interval.first = operation_ids[&block->front()];
-        result_interval.second = operation_ids[&block->back()];
+        result_interval.start = operation_ids[&block->front()];
+        result_interval.end = operation_ids[&block->back()];
 
         memrefs_to_print.push_back(arg);
         values_intervals.push_back(result_interval);
@@ -134,11 +140,11 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
         for (Value value : currently_live_values) {
           if (isa<TypedValue<MemRefType>>(value)) {
             size_t current_value_max_ind =
-                values_intervals[value_ids[value]].second;
+                values_intervals[value_ids[value]].end;
 
             // Setting New Maximum Interval for a var that is in Cycle Block
             if (current_value_max_ind < cycle_block_end_ind)
-              values_intervals[value_ids[value]].second = cycle_block_end_ind;
+              values_intervals[value_ids[value]].end = cycle_block_end_ind;
           }
         }
       }
@@ -146,8 +152,8 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
       for (Value result : op.getResults()) {
         if (isa<TypedValue<MemRefType>>(result)) {
           auto live_operations = liveness->resolveLiveness(result);
-          result_interval.first  = GetMinLiveInd(live_operations, operation_ids);
-          result_interval.second = GetMaxLiveInd(live_operations, operation_ids);
+          result_interval.start  = GetMinLiveInd(live_operations, operation_ids);
+          result_interval.end = GetMaxLiveInd(live_operations, operation_ids);
 
           // Setting Value And Interval of Value with Its Index
           values_intervals[value_ids[result]] = result_interval;
@@ -160,7 +166,7 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
   LifeAliasAnalysis(alias, &memrefs_to_print, &values_intervals);
 
   // Lambda Function for Printing Memref's Name
-  auto printMemref = [&](Value value, std::pair<size_t, size_t> interval,
+  auto printMemref = [&](Value value, LifeInterval interval,
                          size_t memref_num) {
     llvm::outs() << "(" << memref_num << ") ";
     if (value.getDefiningOp())
@@ -171,7 +177,7 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
                    << block_ids[block_arg.getOwner()];
     }
 
-    llvm::outs() << ": [" << interval.first << "; " << interval.second << "]\n";
+    llvm::outs() << ": [" << interval.start << "; " << interval.end << "]\n";
   };
 
   // Printing all Memrefs
@@ -192,8 +198,8 @@ void PrintIndependentLifeRanges(
   for (size_t i = 0; i < life_ranges.size(); i++) {
     for (size_t j = i + 1; j < life_ranges.size(); j++) {
       // No Intersection between to intervals
-      if (life_ranges[i].second < life_ranges[j].first ||
-          life_ranges[j].second < life_ranges[i].first) {
+      if (life_ranges[i].end < life_ranges[j].start ||
+          life_ranges[j].end < life_ranges[i].start) {
         memory_can_be_united = true;
         llvm::outs() << "We can unite (" << i << ") and "
                      << "(" << j << ") memory!\n";
