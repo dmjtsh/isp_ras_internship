@@ -99,9 +99,6 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
   DenseMap<Operation *, size_t> operation_ids;
   DenseMap<Value, size_t>       value_ids;
 
-  liveness->getOperation()->walk<WalkOrder::PreOrder>([&](Block *block) {
-    block_ids.insert({block, block_ids.size()});
-  });
   liveness->getOperation()->walk<WalkOrder::PreOrder>(
       [&](Operation *operation) {
         operation_ids.insert({operation, operation_ids.size() - 1});
@@ -110,6 +107,13 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
             value_ids.insert({result, value_ids.size()});
         }
       });
+  liveness->getOperation()->walk<WalkOrder::PreOrder>([&](Block *block) {
+    for (Value arg : block->getArguments()) {
+      if (isa<TypedValue<MemRefType>>(arg))
+        value_ids.insert({arg, value_ids.size()});
+    }
+    block_ids.insert({block, block_ids.size()});
+  });
 
   std::vector<Value> memrefs_to_print(value_ids.size());
   // Array of Values, Indexing in this Array is Done By value_ids!
@@ -124,8 +128,8 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
         result_interval.end = operation_ids[&block->back()];
 
         // Adding Args in the end of memref array for comfortable printing
-        memrefs_to_print.push_back(arg);
-        values_intervals.push_back(result_interval);
+        values_intervals[value_ids[arg]] = result_interval;
+        memrefs_to_print[value_ids[arg]] = arg;
       }
     }
 
