@@ -127,7 +127,6 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
         result_interval.start = operation_ids[&block->front()];
         result_interval.end = operation_ids[&block->back()];
 
-        // Adding Args in the end of memref array for comfortable printing
         values_intervals[value_ids[arg]] = result_interval;
         memrefs_to_print[value_ids[arg]] = arg;
       }
