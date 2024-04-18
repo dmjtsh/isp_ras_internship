@@ -1,3 +1,4 @@
+// RUN: lr-mlir-opt %s --life-range | FileCheck %s
 // easy
 func.func @test2() {
   %alloc = memref.alloc() : memref<16xf16>
@@ -11,3 +12,7 @@ func.func @test2() {
   memref.store %c1_i32, %alloc_0[%c1] : memref<10xi32>
   return
 }
+// CHECK: (0) memref_0: [0; 6]
+// CHECK: (1) memref_1: [7; 8]
+
+// CHECK: We can unite (0) and (1) memory!

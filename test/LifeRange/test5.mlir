@@ -1,3 +1,5 @@
+// RUN: lr-mlir-opt %s --life-range | FileCheck %s
+// normal
 func.func @test5(%input : memref<16xf16>) {
   %alloc = memref.alloc() : memref<10xi32>
 
@@ -33,3 +35,15 @@ func.func @test5(%input : memref<16xf16>) {
   
   return
 }
+
+// CHECK: (0) memref_0: [0; 19]
+// CHECK: (1) memref_1: [11; 13]
+// CHECK: (2) memref_2: [14; 15]
+// CHECK: (3) memref_3: [20; 20]
+// CHECK: (4) memref_arg0@0: [0; 21]
+
+// CHECK: We can unite (0) and (3) memory!
+// CHECK: We can unite (1) and (2) memory!
+// CHECK: We can unite (1) and (3) memory!
+// CHECK: We can unite (2) and (3) memory!
+

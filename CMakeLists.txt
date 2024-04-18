@@ -24,6 +24,10 @@ include(AddLLVM)
 include(AddMLIR)
 include(HandleLLVMOptions)
 
+
+set(LIFE_RANGE_SOURCE_DIR ${PROJECT_SOURCE_DIR})
+set(LIFE_RANGE_BINARY_DIR ${PROJECT_BINARY_DIR})
+
 include_directories(${LLVM_INCLUDE_DIRS})
 include_directories(${MLIR_INCLUDE_DIRS})
 include_directories(${CMAKE_SOURCE_DIR}/include)
@@ -32,6 +36,7 @@ include_directories(${CMAKE_BINARY_DIR}/include)
 link_directories(${LLVM_BUILD_LIBRARY_DIR})
 add_definitions(${LLVM_DEFINITIONS})
 
+add_subdirectory(test)
 add_subdirectory(include)
 add_subdirectory(tools)
 add_subdirectory(lib)

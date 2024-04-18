@@ -1,3 +1,5 @@
+// RUN: lr-mlir-opt %s --life-range | FileCheck %s
+// normal
 func.func @test4(%input : memref<16xf16>) {
   %alloc = memref.alloc() : memref<10xi32>
 
@@ -24,3 +26,9 @@ func.func @test4(%input : memref<16xf16>) {
   memref.store %2, %alloc[%c1] : memref<10xi32>
   return
 }
+
+// CHECK: (0) memref_0: [0; 15]
+// CHECK: (1) memref_1: [8; 10]
+// CHECK: (2) memref_arg0@0: [0; 16]
+
+// CHECK: No memory to unite :-(
