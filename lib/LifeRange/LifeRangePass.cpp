@@ -25,6 +25,9 @@ namespace liferange {
 using namespace mlir;
 using namespace mlir::liferange;
 
+/*
+* Life Interval Struct [start; end]
+*/
 struct LifeInterval
 {
   size_t start;
@@ -109,6 +112,7 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
       });
 
   std::vector<Value> memrefs_to_print(value_ids.size());
+  // Array of Values, Indexing in this Array is Done By value_ids!
   std::vector<LifeInterval> values_intervals(value_ids.size());
   LifeInterval result_interval;
 
@@ -119,6 +123,7 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
         result_interval.start = operation_ids[&block->front()];
         result_interval.end = operation_ids[&block->back()];
 
+        // Adding Args in the end of memref array for comfortable printing
         memrefs_to_print.push_back(arg);
         values_intervals.push_back(result_interval);
       }
