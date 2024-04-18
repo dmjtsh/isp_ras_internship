@@ -13,6 +13,6 @@ func.func @test2() {
   return
 }
 // CHECK: (0) memref_0: [0; 6]
-// CHECK: (1) memref_1: [7; 8]
-
-// CHECK: We can unite (0) and (1) memory!
+// CHECK-NEXT: (1) memref_1: [7; 8]
+// CHECK-EMPTY:
+// CHECK-NEXT: We can unite (0) and (1) memory!

@@ -20,6 +20,6 @@ func.func @test6() {
 }
 
 // CHECK: (0) memref_0: [0; 12]
-// CHECK: (1) memref_2: [9; 13]
-
-// CHECK: No memory to unite :-(
+// CHECK-NEXT: (1) memref_2: [9; 13]
+// CHECK-EMPTY:
+// CHECK-NEXT: No memory to unite :-(

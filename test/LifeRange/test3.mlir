@@ -25,7 +25,7 @@ func.func @test3(%input : memref<16xf16>) {
 }
 
 // CHECK: (0) memref_0: [0; 12]
-// CHECK: (1) memref_1: [9; 11]
-// CHECK: (2) memref_arg0@0: [0; 14]
-
-// CHECK: No memory to unite :-(
+// CHECK-NEXT: (1) memref_1: [9; 11]
+// CHECK-NEXT: (2) memref_arg0@0: [0; 14]
+// CHECK-EMPTY:
+// CHECK-NEXT: No memory to unite :-(
