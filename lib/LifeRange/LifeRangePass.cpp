@@ -29,7 +29,7 @@ struct LifeInterval
 {
   size_t start;
   size_t end;
-}
+};
 
 /*
  * Life Alias Analysis function
@@ -89,7 +89,7 @@ size_t GetMinLiveInd(Liveness::OperationListT live_operations,
 * Scans all memrefs and Prints Life Intervals in Brackets
 * Returns Vector of Life Intervals 
 */
-std::vector<std::pair<size_t, size_t>>
+std::vector<LifeInterval>
 PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
   // Arrays of Indexes
   DenseMap<Block *, size_t>     block_ids;
@@ -193,7 +193,7 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
 * Prints non-Intersected intervals (so we can see where we can unite our memory)
 */
 void PrintIndependentLifeRanges(
-    std::vector<std::pair<size_t, size_t>> life_ranges) {
+    std::vector<LifeInterval> life_ranges) {
   bool memory_can_be_united = false;
   for (size_t i = 0; i < life_ranges.size(); i++) {
     for (size_t j = i + 1; j < life_ranges.size(); j++) {
@@ -222,7 +222,7 @@ struct LifeRangePass : public liferange::impl::LifeRangeBase<LifeRangePass> {
     AliasAnalysis &aa = getAnalysis<AliasAnalysis>();
 
     llvm::outs() << "\n----------LifeRangePass----------\n\n";
-    std::vector<std::pair<size_t, size_t>> life_ranges =
+    std::vector<LifeInterval> life_ranges =
         PrintValuesLifeRanges(&lv, &aa);
     
     llvm::outs() << "\n";

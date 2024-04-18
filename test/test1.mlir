@@ -1,3 +1,4 @@
+// RUN: lr-mlir-opt %s --life | FileCheck %s
 // easy
 func.func @test1() {
   %alloc = memref.alloc() : memref<16xf16>
