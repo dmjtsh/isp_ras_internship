@@ -115,8 +115,8 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
     block_ids.insert({block, block_ids.size()});
   });
 
+  // Vectors of Values And Intervals, Indexing is Done By value_ids!
   std::vector<Value> memrefs_to_print(value_ids.size());
-  // Array of Values, Indexing in this Array is Done By value_ids!
   std::vector<LifeInterval> values_intervals(value_ids.size());
   LifeInterval result_interval;
 
@@ -136,7 +136,7 @@ PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
       if (op.getNumResults() < 1)
         continue;
 
-      // Checking if we are in Cycle Block
+      // Checking if it is a Cycle Oper
       if (isa<scf::ForOp>(op)) {
         const LivenessBlockInfo *block_liveness = liveness->getLiveness(block);
         auto currently_live_values = block_liveness->currentlyLiveValues(&op);
