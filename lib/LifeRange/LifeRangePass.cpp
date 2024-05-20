@@ -78,6 +78,7 @@ size_t GetMaxLiveInd(Liveness::OperationListT live_operations,
 
   return max_ind;
 }
+
 size_t GetMinLiveInd(Liveness::OperationListT live_operations,
                      DenseMap<Operation *, size_t> operation_ids) {
   size_t min_ind = operation_ids.size();
@@ -90,7 +91,7 @@ size_t GetMinLiveInd(Liveness::OperationListT live_operations,
 /*
 * Print Values Life Ranges function
 * Scans all memrefs and Prints Life Intervals in Brackets
-* Returns Vector of Life Intervals 
+* Returns Vector of Life Intervals
 */
 std::vector<LifeInterval>
 PrintValuesLifeRanges(Liveness *liveness, AliasAnalysis *alias) {
@@ -232,7 +233,7 @@ struct LifeRangePass : public liferange::impl::LifeRangeBase<LifeRangePass> {
     llvm::outs() << "\n----------LifeRangePass----------\n\n";
     std::vector<LifeInterval> life_ranges =
         PrintValuesLifeRanges(&lv, &aa);
-    
+
     llvm::outs() << "\n";
 
     PrintIndependentLifeRanges(life_ranges);
@@ -246,3 +247,4 @@ std::unique_ptr<OperationPass<func::FuncOp>>
 mlir::liferange::createLifeRangePass() {
   return std::make_unique<LifeRangePass>();
 }
+
